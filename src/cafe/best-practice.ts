@@ -36,7 +36,7 @@ class Customer {
     return this.espresso !== null;
   }
 
-  buyEsspresso(espresso: Espresso): number {
+  buyEspresso(espresso: Espresso): number {
     this.espresso = espresso;
     this.wallet.decreaseBalance(espresso.getPrice());
     return espresso.getPrice();
@@ -46,7 +46,7 @@ class Customer {
 class Barista {
   makeCoffee(customer: Customer): number {
     const espresso = new Espresso();
-    return customer.buyEsspresso(espresso);
+    return customer.buyEspresso(espresso);
   }
 }
 
