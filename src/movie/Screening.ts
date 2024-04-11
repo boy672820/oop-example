@@ -17,17 +17,12 @@ export default class Screening {
 
   getMovieFee = (): Money => this.movie.getFee();
 
-  reserve(customer: Customer, audienceCount: number): Reservation {
-    return new Reservation(
-      customer,
-      this,
-      this.calculateFee(audienceCount),
-      audienceCount,
-    );
+  reserve(customer: Customer): Reservation {
+    return new Reservation(customer, this, this.calculateFee());
   }
 
-  calculateFee(audienceCount: number): Money {
-    // return this.movie.calculateMovieFee(this, audienceCount);
-    throw new Error('Not implemented yet');
+  calculateFee(): Money {
+    return this.movie.calculateMovieFee(this);
+    // throw new Error('Not implemented yet');
   }
 }

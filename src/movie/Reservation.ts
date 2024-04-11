@@ -7,6 +7,5 @@ export default class Reservation {
     private readonly customer: Customer,
     private readonly screening: Screening,
     private readonly fee: Money,
-    private readonly audienceCount: number,
   ) {}
 }
